@@ -1,0 +1,61 @@
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:[m[K In member function '[01m[Kvoid Patrol::laserscanCallBack(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K':
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:43:17:[m[K [01;31m[Kerror: [m[K'[01m[Kok[m[K' was not declared in this scope; did you mean '[01m[Krclcpp::ok[m[K'?
+   43 |                 [01;31m[Kok[m[K = false;
+      |                 [01;31m[K^~[m[K
+      |                 [32m[Krclcpp::ok[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/client.hpp:36[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2[m[K,
+                 from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:1[m[K:
+[01m[K/opt/ros/foxy/include/rclcpp/utilities.hpp:144:1:[m[K [01;36m[Knote: [m[K'[01m[Krclcpp::ok[m[K' declared here
+  144 | [01;36m[Kok[m[K(rclcpp::Context::SharedPtr context = nullptr);
+      | [01;36m[K^~[m[K
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:47:13:[m[K [01;31m[Kerror: [m[K'[01m[Kok[m[K' was not declared in this scope; did you mean '[01m[Krclcpp::ok[m[K'?
+   47 |         if ([01;31m[Kok[m[K)
+      |             [01;31m[K^~[m[K
+      |             [32m[Krclcpp::ok[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/client.hpp:36[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2[m[K,
+                 from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:1[m[K:
+[01m[K/opt/ros/foxy/include/rclcpp/utilities.hpp:144:1:[m[K [01;36m[Knote: [m[K'[01m[Krclcpp::ok[m[K' declared here
+  144 | [01;36m[Kok[m[K(rclcpp::Context::SharedPtr context = nullptr);
+      | [01;36m[K^~[m[K
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:53:9:[m[K [01;31m[Kerror: [m[K'[01m[Kok[m[K' was not declared in this scope; did you mean '[01m[Krclcpp::ok[m[K'?
+   53 |         [01;31m[Kok[m[K = true;
+      |         [01;31m[K^~[m[K
+      |         [32m[Krclcpp::ok[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/client.hpp:36[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2[m[K,
+                 from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:1[m[K:
+[01m[K/opt/ros/foxy/include/rclcpp/utilities.hpp:144:1:[m[K [01;36m[Knote: [m[K'[01m[Krclcpp::ok[m[K' declared here
+  144 | [01;36m[Kok[m[K(rclcpp::Context::SharedPtr context = nullptr);
+      | [01;36m[K^~[m[K
+make[2]: *** [CMakeFiles/patrol_node.dir/build.make:76: CMakeFiles/patrol_node.dir/src/patrol.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/patrol_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

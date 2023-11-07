@@ -1,0 +1,19 @@
+[0.018s] Invoking command in '/home/user/ros2_ws/src/citylab_project/build/robot_patrol': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy _=/usr/bin/env /usr/bin/cmake --build /home/user/ros2_ws/src/citylab_project/build/robot_patrol -- -j8 -l8
+[0.081s] [ 33%] [32mBuilding CXX object CMakeFiles/patrol_node.dir/src/patrol_node.cpp.o[0m
+[0.081s] [ 66%] [32mBuilding CXX object CMakeFiles/patrol_node.dir/src/patrol.cpp.o[0m
+[0.230s] In file included from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:1[m[K:
+[0.230s] [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/msg/LaserScan.hpp: No such file or directory
+[0.230s]     2 | #include [01;31m[K"sensor_msgs/msg/LaserScan.hpp"[m[K
+[0.230s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.230s] In file included from [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol_node.cpp:1[m[K:
+[0.230s] [01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/msg/LaserScan.hpp: No such file or directory
+[0.230s]     2 | #include [01;31m[K"sensor_msgs/msg/LaserScan.hpp"[m[K
+[0.230s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.231s] compilation terminated.
+[0.231s] compilation terminated.
+[0.233s] make[2]: *** [CMakeFiles/patrol_node.dir/build.make:76: CMakeFiles/patrol_node.dir/src/patrol.cpp.o] Error 1
+[0.233s] make[2]: *** Waiting for unfinished jobs....
+[0.233s] make[2]: *** [CMakeFiles/patrol_node.dir/build.make:63: CMakeFiles/patrol_node.dir/src/patrol_node.cpp.o] Error 1
+[0.233s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/patrol_node.dir/all] Error 2
+[0.233s] make: *** [Makefile:141: all] Error 2
+[0.235s] Invoked command in '/home/user/ros2_ws/src/citylab_project/build/robot_patrol' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy _=/usr/bin/env /usr/bin/cmake --build /home/user/ros2_ws/src/citylab_project/build/robot_patrol -- -j8 -l8

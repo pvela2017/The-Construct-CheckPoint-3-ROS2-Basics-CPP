@@ -1,0 +1,114 @@
+[0.000000] (-) TimerEvent: {}
+[0.000669] (robot_patrol) JobQueued: {'identifier': 'robot_patrol', 'dependencies': OrderedDict()}
+[0.000765] (robot_patrol) JobStarted: {'identifier': 'robot_patrol'}
+[0.014825] (robot_patrol) JobProgress: {'identifier': 'robot_patrol', 'progress': 'cmake'}
+[0.015771] (robot_patrol) JobProgress: {'identifier': 'robot_patrol', 'progress': 'build'}
+[0.016696] (robot_patrol) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/user/ros2_ws/src/citylab_project/build/robot_patrol', '--', '-j8', '-l8'], 'cwd': '/home/user/ros2_ws/src/citylab_project/build/robot_patrol', 'env': OrderedDict([('ROS_VERSION', '2'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('GAZEBO_MASTER_URI', 'http://1_xterm:11345'), ('ROS_PYTHON_VERSION', '3'), ('HOSTNAME', '1_xterm'), ('NVIDIA_REQUIRE_CUDA', 'cuda>=11.1 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441 brand=tesla,driver>=450,driver<451'), ('NCCL_VERSION', '2.7.8'), ('PWD', '/home/user/ros2_ws/src/citylab_project/build/robot_patrol'), ('PORT', '4000'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_IP', ''), ('HOME', '/home/user'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('CUDA_VERSION', '11.1.1'), ('AMENT_PREFIX_PATH', '/home/simulations/ros2_sims_ws/install/ros1_bridge:/opt/ros/foxy'), ('CMAKE_PREFIX_PATH', '/home/simulations/ros2_sims_ws/install/ros1_bridge:/opt/ros/foxy'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:/usr/share/gazebo-11:/usr/share/gazebo'), ('COLCON_PREFIX_PATH', '/home/simulations/ros2_sims_ws/install:/home/user/ros2_ws/install'), ('GAZEBO_MASTER_PORT', '11345'), ('NVM_DIR', '/usr/local/share/shell/.nvm'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PYTHONPATH', '/home/simulations/ros2_sims_ws/install/ros1_bridge/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('TERM', 'xterm-color'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('SNAPCRAFT_BUILD_ENVIRONMENT', 'host'), ('GAZEBO_MASTER_HOSTNAME', '1_xterm'), ('LIBRARY_PATH', '/usr/local/cuda/lib64/stubs'), ('DISPLAY', ':1'), ('SHLVL', '2'), ('NVM_CD_FLAGS', ''), ('ROS_MASTER_URI', 'http://1_xterm:11311'), ('ROS_HOSTNAME', '1_xterm'), ('LD_LIBRARY_PATH', '/usr/local/cuda-10.2/lib64:/home/user/.catkin_ws_python3/src/TensorRT-7.0.0.11/lib:/home/simulations/ros2_sims_ws/install/ros1_bridge/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda-10.2/lib64:/home/user/.catkin_ws_python3/src/TensorRT-7.0.0.11/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins'), ('ROS_LOCALHOST_ONLY', '0'), ('SLOT_SHELL_START_ID', '724517'), ('SLOT_PREFIX', 'bf856e53-ee9a-4efc-8ec1-b5c09308b25e'), ('LC_ALL', 'C'), ('SOURCE_ROS1_WS', ''), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:/usr/share/gazebo-11/models:/usr/share/gazebo-9/models:/usr/share/gazebo/models_robox'), ('SLOT_JENKINS_PORT', '25136'), ('SLOT_SYSTEMD', 'False'), ('PATH', '/opt/ros/foxy/bin:/usr/local/share/shell/.nvm/versions/node/v6.11.2/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/user/.cargo/bin:/home/user/.cargo/bin'), ('SELECTED_ROS_DISTRO', 'foxy'), ('NVM_BIN', '/usr/local/share/shell/.nvm/versions/node/v6.11.2/bin'), ('NODE_VERSION', 'v6.11.2'), ('DEBIAN_FRONTEND', 'noninteractive'), ('ROS_DISTRO', 'foxy'), ('GAZEBO_VERBOSE', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('OLDPWD', '/home/user/ros2_ws'), ('SOURCE_ROS2_WS', 'True'), ('SLOT_ROSBRIDGE_PORT', '20001'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.075484] (robot_patrol) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target patrol_node\x1b[0m\n'}
+[0.105409] (-) TimerEvent: {}
+[0.118670] (robot_patrol) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/patrol_node.dir/src/patrol.cpp.o\x1b[0m\n'}
+[0.210408] (-) TimerEvent: {}
+[0.316982] (-) TimerEvent: {}
+[0.418435] (-) TimerEvent: {}
+[0.525047] (-) TimerEvent: {}
+[0.630383] (-) TimerEvent: {}
+[0.732763] (-) TimerEvent: {}
+[0.838448] (-) TimerEvent: {}
+[0.942458] (-) TimerEvent: {}
+[1.049044] (-) TimerEvent: {}
+[1.155557] (-) TimerEvent: {}
+[1.262163] (-) TimerEvent: {}
+[1.366498] (-) TimerEvent: {}
+[1.473020] (-) TimerEvent: {}
+[1.549162] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:\x1b[m\x1b[K In constructor '\x1b[01m\x1b[KPatrol::Patrol()\x1b[m\x1b[K':\n"}
+[1.549432] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:11:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K'\x1b[01m\x1b[K_1\x1b[m\x1b[K' was not declared in this scope; did you mean '\x1b[01m\x1b[Kstd::placeholders::_1\x1b[m\x1b[K'?\n"}
+[1.549540] (robot_patrol) StderrLine: {'line': b'   11 |       "/scan", 10, std::bind(&Patrol::laserscanCallBack, this, \x1b[01;31m\x1b[K_1\x1b[m\x1b[K), callback_group);\n'}
+[1.549812] (robot_patrol) StderrLine: {'line': b'      |                                                                \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[1.549911] (robot_patrol) StderrLine: {'line': b'      |                                                                \x1b[32m\x1b[Kstd::placeholders::_1\x1b[m\x1b[K\n'}
+[1.549999] (robot_patrol) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/context.hpp:19\x1b[m\x1b[K,\n'}
+[1.550083] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/contexts/default_context.hpp:18\x1b[m\x1b[K,\n'}
+[1.550164] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:32\x1b[m\x1b[K,\n'}
+[1.550330] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[1.550418] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[1.550504] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[1.550583] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2\x1b[m\x1b[K,\n'}
+[1.550663] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:1\x1b[m\x1b[K:\n'}
+[1.550749] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/usr/include/c++/9/functional:211:34:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K'\x1b[01m\x1b[Kstd::placeholders::_1\x1b[m\x1b[K' declared here\n"}
+[1.550830] (robot_patrol) StderrLine: {'line': b'  211 |     extern const _Placeholder<1> \x1b[01;36m\x1b[K_1\x1b[m\x1b[K;\n'}
+[1.550909] (robot_patrol) StderrLine: {'line': b'      |                                  \x1b[01;36m\x1b[K^~\x1b[m\x1b[K\n'}
+[1.550988] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:11:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K'\x1b[01m\x1b[Kcallback_group\x1b[m\x1b[K' was not declared in this scope; did you mean '\x1b[01m\x1b[Krclcpp::callback_group\x1b[m\x1b[K'?\n"}
+[1.551070] (robot_patrol) StderrLine: {'line': b'   11 |       "/scan", 10, std::bind(&Patrol::laserscanCallBack, this, _1), \x1b[01;31m\x1b[Kcallback_group\x1b[m\x1b[K);\n'}
+[1.551150] (robot_patrol) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.551232] (robot_patrol) StderrLine: {'line': b'      |                                                                     \x1b[32m\x1b[Krclcpp::callback_group\x1b[m\x1b[K\n'}
+[1.551306] (robot_patrol) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[1.551402] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[1.551481] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[1.551560] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[1.551639] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[1.551716] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[1.551794] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[1.551873] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[1.551950] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2\x1b[m\x1b[K,\n'}
+[1.552028] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:1\x1b[m\x1b[K:\n'}
+[1.552106] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:162:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K'\x1b[01m\x1b[Krclcpp::callback_group\x1b[m\x1b[K' declared here\n"}
+[1.552185] (robot_patrol) StderrLine: {'line': b'  162 | namespace \x1b[01;36m\x1b[Kcallback_group\x1b[m\x1b[K\n'}
+[1.552266] (robot_patrol) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.552352] (robot_patrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:14:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunable to find numeric literal operator \'\x1b[01m\x1b[Koperator""ms\x1b[m\x1b[K\'\n'}
+[1.552432] (robot_patrol) StderrLine: {'line': b'   14 |     timer_ = this->create_wall_timer(\x1b[01;31m\x1b[K100ms\x1b[m\x1b[K, std::bind(&Patrol::cmdvelCallBack, this), callback_group_);\n'}
+[1.552512] (robot_patrol) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[1.564074] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:\x1b[m\x1b[K In member function '\x1b[01m\x1b[Kvoid Patrol::laserscanCallBack(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K':\n"}
+[1.564313] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:25:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K'\x1b[01m\x1b[Kminus_pi_2_index\x1b[m\x1b[K' was not declared in this scope\n"}
+[1.564414] (robot_patrol) StderrLine: {'line': b'   25 |  \x1b[01;31m\x1b[Kminus_pi_2_index\x1b[m\x1b[K = int((min_angle - msg->angle_min) / msg->angle_increment);\n'}
+[1.564500] (robot_patrol) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.566883] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:26:2:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K'\x1b[01m\x1b[Kpi_2_index\x1b[m\x1b[K' was not declared in this scope\n"}
+[1.567032] (robot_patrol) StderrLine: {'line': b'   26 |  \x1b[01;31m\x1b[Kpi_2_index\x1b[m\x1b[K       = int((max_angle - msg->angle_min) / msg->angle_increment);\n'}
+[1.567120] (robot_patrol) StderrLine: {'line': b'      |  \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.568230] (robot_patrol) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/service.hpp:34\x1b[m\x1b[K,\n'}
+[1.568335] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:25\x1b[m\x1b[K,\n'}
+[1.568419] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[1.568500] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[1.568580] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[1.568657] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[1.568733] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[1.568948] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[1.569031] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[1.569109] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[1.569186] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include/patrol.h:2\x1b[m\x1b[K,\n'}
+[1.569265] (robot_patrol) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:1\x1b[m\x1b[K:\n'}
+[1.569343] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:30:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K'\x1b[01m\x1b[Knode\x1b[m\x1b[K' was not declared in this scope; did you mean '\x1b[01m\x1b[KNode\x1b[m\x1b[K'?\n"}
+[1.569434] (robot_patrol) StderrLine: {'line': b'   30 |   RCLCPP_ERROR(\x1b[01;31m\x1b[Knode\x1b[m\x1b[K->get_logger(), "Index out of size");\n'}
+[1.569512] (robot_patrol) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[1.569589] (robot_patrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:30:3:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[1.569669] (robot_patrol) StderrLine: {'line': b'   30 |   \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K(node->get_logger(), "Index out of size");\n'}
+[1.569755] (robot_patrol) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.569833] (robot_patrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:30:3:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[1.569911] (robot_patrol) StderrLine: {'line': b'   30 |   \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K(node->get_logger(), "Index out of size");\n'}
+[1.569989] (robot_patrol) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.570066] (robot_patrol) StderrLine: {'line': b'\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:30:3:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[1.570143] (robot_patrol) StderrLine: {'line': b'   30 |   \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K(node->get_logger(), "Index out of size");\n'}
+[1.570221] (robot_patrol) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.570297] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:36:69:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Ksuggest braces around empty body in an '\x1b[01m\x1b[Kif\x1b[m\x1b[K' statement [\x1b[01;35m\x1b[K-Wempty-body\x1b[m\x1b[K]\n"}
+[1.570370] (robot_patrol) StderrLine: {'line': b'   36 |    if(msg->ranges[i] > clear_distance && msg->ranges[i] != INFINITY)\x1b[01;35m\x1b[K;\x1b[m\x1b[K\n'}
+[1.570450] (robot_patrol) StderrLine: {'line': b'      |                                                                     \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[1.570525] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:36:4:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kthis '\x1b[01m\x1b[Kif\x1b[m\x1b[K' clause does not guard... [\x1b[01;35m\x1b[K-Wmisleading-indentation\x1b[m\x1b[K]\n"}
+[1.570600] (robot_patrol) StderrLine: {'line': b'   36 |    \x1b[01;35m\x1b[Kif\x1b[m\x1b[K(msg->ranges[i] > clear_distance && msg->ranges[i] != INFINITY);\n'}
+[1.570660] (robot_patrol) StderrLine: {'line': b'      |    \x1b[01;35m\x1b[K^~\x1b[m\x1b[K\n'}
+[1.570719] (robot_patrol) StderrLine: {'line': b"\x1b[01m\x1b[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:37:4:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K...this statement, but the latter is misleadingly indented as if it were guarded by the '\x1b[01m\x1b[Kif\x1b[m\x1b[K'\n"}
+[1.570791] (robot_patrol) StderrLine: {'line': b'   37 |    \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[1.570866] (robot_patrol) StderrLine: {'line': b'      |    \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[1.579302] (-) TimerEvent: {}
+[1.685839] (-) TimerEvent: {}
+[1.791851] (-) TimerEvent: {}
+[1.894760] (-) TimerEvent: {}
+[1.999409] (-) TimerEvent: {}
+[2.105993] (-) TimerEvent: {}
+[2.212545] (-) TimerEvent: {}
+[2.319073] (-) TimerEvent: {}
+[2.425607] (-) TimerEvent: {}
+[2.514588] (robot_patrol) StderrLine: {'line': b'make[2]: *** [CMakeFiles/patrol_node.dir/build.make:76: CMakeFiles/patrol_node.dir/src/patrol.cpp.o] Error 1\n'}
+[2.514952] (robot_patrol) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/patrol_node.dir/all] Error 2\n'}
+[2.515093] (robot_patrol) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[2.517198] (robot_patrol) CommandEnded: {'returncode': 2}
+[2.526458] (-) TimerEvent: {}
+[2.580209] (robot_patrol) JobEnded: {'identifier': 'robot_patrol', 'rc': 2}
+[2.591031] (-) EventReactorShutdown: {}

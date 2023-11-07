@@ -1,0 +1,3 @@
+[35m[1mScanning dependencies of target patrol_node[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/patrol_node.dir/src/patrol.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable patrol_node[0m

@@ -1,0 +1,15 @@
+[35m[1mScanning dependencies of target patrol_node[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/patrol_node.dir/src/patrol.cpp.o[0m
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:[m[K In member function '[01m[Kvoid Patrol::laserscanCallBack(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K':
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:46:28:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before '[01m[K([m[K' token
+   46 | void Patrol::cmdvelCallBack[01;31m[K([m[K)
+      |                            [01;31m[K^[m[K
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:58:1:[m[K [01;31m[Kerror: [m[Kexpected '[01m[K}[m[K' at end of input
+   58 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:20:1:[m[K [01;36m[Knote: [m[Kto match this '[01m[K{[m[K'
+   20 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+make[2]: *** [CMakeFiles/patrol_node.dir/build.make:76: CMakeFiles/patrol_node.dir/src/patrol.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/patrol_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
