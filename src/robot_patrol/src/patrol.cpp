@@ -28,7 +28,7 @@ void Patrol::laserscanCallBack(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 
   if (minus_pi_2_index > msg->ranges.size() || pi_2_index > msg->ranges.size()) 
   {
-    // RCLCPP_ERROR(node->get_logger(), "Index out of size");
+    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Index out of size.");
   } 
   else 
   {

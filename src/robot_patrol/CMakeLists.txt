@@ -20,6 +20,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(custom_interfaces REQUIRED)
 
 
 if(BUILD_TESTING)
@@ -33,14 +35,29 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+
 include_directories(include)
 
 add_executable(patrol_node src/patrol_node.cpp
 				src/patrol.cpp)
 ament_target_dependencies(patrol_node rclcpp sensor_msgs geometry_msgs)
 
+add_executable(direction_service_node src/direction_service_node.cpp
+				src/direction_service.cpp)
+ament_target_dependencies(direction_service_node rclcpp sensor_msgs std_msgs custom_interfaces)
+
+add_executable(test_node src/test.cpp)
+ament_target_dependencies(test_node rclcpp sensor_msgs geometry_msgs custom_interfaces std_msgs)
+
+add_executable(patrol_with_service_node src/patrol_with_service_node.cpp
+                 src/patrol_with_service.cpp)
+ament_target_dependencies(patrol_with_service_node rclcpp sensor_msgs geometry_msgs custom_interfaces std_msgs)
+
 install(TARGETS
    patrol_node
+   direction_service_node
+   patrol_with_service_node
+   test_node
    DESTINATION lib/${PROJECT_NAME}
  )
 

@@ -1,4 +1,0 @@
-[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:[m[K In member function '[01m[Kvoid Patrol::laserscanCallBack(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K':
-[01m[K/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.cpp:24:8:[m[K [01;35m[Kwarning: [m[Kunused variable '[01m[Kok[m[K' [[01;35m[K-Wunused-variable[m[K]
-   24 |   bool [01;35m[Kok[m[K = true;
-      |        [01;35m[K^~[m[K

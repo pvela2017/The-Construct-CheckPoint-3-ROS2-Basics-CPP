@@ -80,6 +80,28 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -112,28 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named direction_service_node
+
+# Build rule for target.
+direction_service_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 direction_service_node
+.PHONY : direction_service_node
+
+# fast build rule for target.
+direction_service_node/fast:
+	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/build
+.PHONY : direction_service_node/fast
+
+#=============================================================================
 # Target rules for targets named patrol_node
 
 # Build rule for target.
@@ -179,6 +192,19 @@ patrol_node: cmake_check_build_system
 patrol_node/fast:
 	$(MAKE) -f CMakeFiles/patrol_node.dir/build.make CMakeFiles/patrol_node.dir/build
 .PHONY : patrol_node/fast
+
+#=============================================================================
+# Target rules for targets named test_node
+
+# Build rule for target.
+test_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_node
+.PHONY : test_node
+
+# fast build rule for target.
+test_node/fast:
+	$(MAKE) -f CMakeFiles/test_node.dir/build.make CMakeFiles/test_node.dir/build
+.PHONY : test_node/fast
 
 #=============================================================================
 # Target rules for targets named robot_patrol_uninstall
@@ -194,6 +220,19 @@ robot_patrol_uninstall/fast:
 .PHONY : robot_patrol_uninstall/fast
 
 #=============================================================================
+# Target rules for targets named patrol_with_service_node
+
+# Build rule for target.
+patrol_with_service_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 patrol_with_service_node
+.PHONY : patrol_with_service_node
+
+# fast build rule for target.
+patrol_with_service_node/fast:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/build
+.PHONY : patrol_with_service_node/fast
+
+#=============================================================================
 # Target rules for targets named uninstall
 
 # Build rule for target.
@@ -205,6 +244,60 @@ uninstall: cmake_check_build_system
 uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
+
+src/direction_service.o: src/direction_service.cpp.o
+
+.PHONY : src/direction_service.o
+
+# target to build an object file
+src/direction_service.cpp.o:
+	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/src/direction_service.cpp.o
+.PHONY : src/direction_service.cpp.o
+
+src/direction_service.i: src/direction_service.cpp.i
+
+.PHONY : src/direction_service.i
+
+# target to preprocess a source file
+src/direction_service.cpp.i:
+	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/src/direction_service.cpp.i
+.PHONY : src/direction_service.cpp.i
+
+src/direction_service.s: src/direction_service.cpp.s
+
+.PHONY : src/direction_service.s
+
+# target to generate assembly for a file
+src/direction_service.cpp.s:
+	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/src/direction_service.cpp.s
+.PHONY : src/direction_service.cpp.s
+
+src/direction_service_node.o: src/direction_service_node.cpp.o
+
+.PHONY : src/direction_service_node.o
+
+# target to build an object file
+src/direction_service_node.cpp.o:
+	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/src/direction_service_node.cpp.o
+.PHONY : src/direction_service_node.cpp.o
+
+src/direction_service_node.i: src/direction_service_node.cpp.i
+
+.PHONY : src/direction_service_node.i
+
+# target to preprocess a source file
+src/direction_service_node.cpp.i:
+	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/src/direction_service_node.cpp.i
+.PHONY : src/direction_service_node.cpp.i
+
+src/direction_service_node.s: src/direction_service_node.cpp.s
+
+.PHONY : src/direction_service_node.s
+
+# target to generate assembly for a file
+src/direction_service_node.cpp.s:
+	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/src/direction_service_node.cpp.s
+.PHONY : src/direction_service_node.cpp.s
 
 src/patrol.o: src/patrol.cpp.o
 
@@ -260,6 +353,87 @@ src/patrol_node.cpp.s:
 	$(MAKE) -f CMakeFiles/patrol_node.dir/build.make CMakeFiles/patrol_node.dir/src/patrol_node.cpp.s
 .PHONY : src/patrol_node.cpp.s
 
+src/patrol_with_service.o: src/patrol_with_service.cpp.o
+
+.PHONY : src/patrol_with_service.o
+
+# target to build an object file
+src/patrol_with_service.cpp.o:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/src/patrol_with_service.cpp.o
+.PHONY : src/patrol_with_service.cpp.o
+
+src/patrol_with_service.i: src/patrol_with_service.cpp.i
+
+.PHONY : src/patrol_with_service.i
+
+# target to preprocess a source file
+src/patrol_with_service.cpp.i:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/src/patrol_with_service.cpp.i
+.PHONY : src/patrol_with_service.cpp.i
+
+src/patrol_with_service.s: src/patrol_with_service.cpp.s
+
+.PHONY : src/patrol_with_service.s
+
+# target to generate assembly for a file
+src/patrol_with_service.cpp.s:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/src/patrol_with_service.cpp.s
+.PHONY : src/patrol_with_service.cpp.s
+
+src/patrol_with_service_node.o: src/patrol_with_service_node.cpp.o
+
+.PHONY : src/patrol_with_service_node.o
+
+# target to build an object file
+src/patrol_with_service_node.cpp.o:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/src/patrol_with_service_node.cpp.o
+.PHONY : src/patrol_with_service_node.cpp.o
+
+src/patrol_with_service_node.i: src/patrol_with_service_node.cpp.i
+
+.PHONY : src/patrol_with_service_node.i
+
+# target to preprocess a source file
+src/patrol_with_service_node.cpp.i:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/src/patrol_with_service_node.cpp.i
+.PHONY : src/patrol_with_service_node.cpp.i
+
+src/patrol_with_service_node.s: src/patrol_with_service_node.cpp.s
+
+.PHONY : src/patrol_with_service_node.s
+
+# target to generate assembly for a file
+src/patrol_with_service_node.cpp.s:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/src/patrol_with_service_node.cpp.s
+.PHONY : src/patrol_with_service_node.cpp.s
+
+src/test.o: src/test.cpp.o
+
+.PHONY : src/test.o
+
+# target to build an object file
+src/test.cpp.o:
+	$(MAKE) -f CMakeFiles/test_node.dir/build.make CMakeFiles/test_node.dir/src/test.cpp.o
+.PHONY : src/test.cpp.o
+
+src/test.i: src/test.cpp.i
+
+.PHONY : src/test.i
+
+# target to preprocess a source file
+src/test.cpp.i:
+	$(MAKE) -f CMakeFiles/test_node.dir/build.make CMakeFiles/test_node.dir/src/test.cpp.i
+.PHONY : src/test.cpp.i
+
+src/test.s: src/test.cpp.s
+
+.PHONY : src/test.s
+
+# target to generate assembly for a file
+src/test.cpp.s:
+	$(MAKE) -f CMakeFiles/test_node.dir/build.make CMakeFiles/test_node.dir/src/test.cpp.s
+.PHONY : src/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -268,20 +442,38 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... direction_service_node"
 	@echo "... patrol_node"
+	@echo "... test_node"
 	@echo "... robot_patrol_uninstall"
+	@echo "... patrol_with_service_node"
 	@echo "... uninstall"
+	@echo "... src/direction_service.o"
+	@echo "... src/direction_service.i"
+	@echo "... src/direction_service.s"
+	@echo "... src/direction_service_node.o"
+	@echo "... src/direction_service_node.i"
+	@echo "... src/direction_service_node.s"
 	@echo "... src/patrol.o"
 	@echo "... src/patrol.i"
 	@echo "... src/patrol.s"
 	@echo "... src/patrol_node.o"
 	@echo "... src/patrol_node.i"
 	@echo "... src/patrol_node.s"
+	@echo "... src/patrol_with_service.o"
+	@echo "... src/patrol_with_service.i"
+	@echo "... src/patrol_with_service.s"
+	@echo "... src/patrol_with_service_node.o"
+	@echo "... src/patrol_with_service_node.i"
+	@echo "... src/patrol_with_service_node.s"
+	@echo "... src/test.o"
+	@echo "... src/test.i"
+	@echo "... src/test.s"
 .PHONY : help
 
 
