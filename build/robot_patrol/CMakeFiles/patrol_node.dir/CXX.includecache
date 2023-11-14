@@ -22,6 +22,10 @@ chrono
 patrol.h
 /home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.h
 
+/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol_node.cpp
+patrol.h
+/home/user/ros2_ws/src/citylab_project/src/robot_patrol/src/patrol.h
+
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__builder.hpp
 builtin_interfaces/msg/detail/duration__struct.hpp
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/builtin_interfaces/msg/detail/duration__struct.hpp

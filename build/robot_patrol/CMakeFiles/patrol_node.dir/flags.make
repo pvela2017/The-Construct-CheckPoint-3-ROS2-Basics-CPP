@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =   -Wall -Wextra -Wpedantic -std=gnu++14
 
-CXX_DEFINES = -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB
+CXX_DEFINES = -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DROS_PACKAGE_NAME=\"robot_patrol\" -DSPDLOG_COMPILED_LIB
 
 CXX_INCLUDES = -I/home/user/ros2_ws/src/citylab_project/src/robot_patrol/include -isystem /opt/ros/foxy/include 
 

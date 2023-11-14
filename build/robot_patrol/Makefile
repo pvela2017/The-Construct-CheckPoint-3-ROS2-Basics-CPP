@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/user/ros2_ws/src/citylab_project/build/robot_patrol
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -80,6 +68,17 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -91,16 +90,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
@@ -114,6 +114,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -123,17 +134,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named go_to_point_action_node
+
+# Build rule for target.
+go_to_point_action_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 go_to_point_action_node
+.PHONY : go_to_point_action_node
+
+# fast build rule for target.
+go_to_point_action_node/fast:
+	$(MAKE) -f CMakeFiles/go_to_point_action_node.dir/build.make CMakeFiles/go_to_point_action_node.dir/build
+.PHONY : go_to_point_action_node/fast
+
+#=============================================================================
+# Target rules for targets named patrol_with_service_node
+
+# Build rule for target.
+patrol_with_service_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 patrol_with_service_node
+.PHONY : patrol_with_service_node
+
+# fast build rule for target.
+patrol_with_service_node/fast:
+	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/build
+.PHONY : patrol_with_service_node/fast
+
+#=============================================================================
+# Target rules for targets named test_node
+
+# Build rule for target.
+test_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_node
+.PHONY : test_node
+
+# fast build rule for target.
+test_node/fast:
+	$(MAKE) -f CMakeFiles/test_node.dir/build.make CMakeFiles/test_node.dir/build
+.PHONY : test_node/fast
+
+#=============================================================================
 # Target rules for targets named direction_service_node
 
 # Build rule for target.
@@ -194,17 +233,30 @@ patrol_node/fast:
 .PHONY : patrol_node/fast
 
 #=============================================================================
-# Target rules for targets named test_node
+# Target rules for targets named robot_patrol__rosidl_typesupport_introspection_c__pyext
 
 # Build rule for target.
-test_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_node
-.PHONY : test_node
+robot_patrol__rosidl_typesupport_introspection_c__pyext: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_introspection_c__pyext
+.PHONY : robot_patrol__rosidl_typesupport_introspection_c__pyext
 
 # fast build rule for target.
-test_node/fast:
-	$(MAKE) -f CMakeFiles/test_node.dir/build.make CMakeFiles/test_node.dir/build
-.PHONY : test_node/fast
+robot_patrol__rosidl_typesupport_introspection_c__pyext/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_introspection_c__pyext/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_typesupport_fastrtps_c__pyext
+
+# Build rule for target.
+robot_patrol__rosidl_typesupport_fastrtps_c__pyext: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_fastrtps_c__pyext
+.PHONY : robot_patrol__rosidl_typesupport_fastrtps_c__pyext
+
+# fast build rule for target.
+robot_patrol__rosidl_typesupport_fastrtps_c__pyext/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_fastrtps_c__pyext/fast
 
 #=============================================================================
 # Target rules for targets named robot_patrol_uninstall
@@ -220,17 +272,108 @@ robot_patrol_uninstall/fast:
 .PHONY : robot_patrol_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named patrol_with_service_node
+# Target rules for targets named robot_patrol__rosidl_typesupport_c__pyext
 
 # Build rule for target.
-patrol_with_service_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 patrol_with_service_node
-.PHONY : patrol_with_service_node
+robot_patrol__rosidl_typesupport_c__pyext: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_c__pyext
+.PHONY : robot_patrol__rosidl_typesupport_c__pyext
 
 # fast build rule for target.
-patrol_with_service_node/fast:
-	$(MAKE) -f CMakeFiles/patrol_with_service_node.dir/build.make CMakeFiles/patrol_with_service_node.dir/build
-.PHONY : patrol_with_service_node/fast
+robot_patrol__rosidl_typesupport_c__pyext/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_c__pyext/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol
+
+# Build rule for target.
+robot_patrol: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol
+.PHONY : robot_patrol
+
+# fast build rule for target.
+robot_patrol/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol.dir/build.make CMakeFiles/robot_patrol.dir/build
+.PHONY : robot_patrol/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_typesupport_fastrtps_cpp
+
+# Build rule for target.
+robot_patrol__rosidl_typesupport_fastrtps_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_fastrtps_cpp
+.PHONY : robot_patrol__rosidl_typesupport_fastrtps_cpp
+
+# fast build rule for target.
+robot_patrol__rosidl_typesupport_fastrtps_cpp/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_fastrtps_cpp/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_generator_c
+
+# Build rule for target.
+robot_patrol__rosidl_generator_c: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_generator_c
+.PHONY : robot_patrol__rosidl_generator_c
+
+# fast build rule for target.
+robot_patrol__rosidl_generator_c/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_generator_c.dir/build.make CMakeFiles/robot_patrol__rosidl_generator_c.dir/build
+.PHONY : robot_patrol__rosidl_generator_c/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__cpp
+
+# Build rule for target.
+robot_patrol__cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__cpp
+.PHONY : robot_patrol__cpp
+
+# fast build rule for target.
+robot_patrol__cpp/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__cpp.dir/build.make CMakeFiles/robot_patrol__cpp.dir/build
+.PHONY : robot_patrol__cpp/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_typesupport_cpp
+
+# Build rule for target.
+robot_patrol__rosidl_typesupport_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_cpp
+.PHONY : robot_patrol__rosidl_typesupport_cpp
+
+# fast build rule for target.
+robot_patrol__rosidl_typesupport_cpp/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_cpp/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_typesupport_fastrtps_c
+
+# Build rule for target.
+robot_patrol__rosidl_typesupport_fastrtps_c: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_fastrtps_c
+.PHONY : robot_patrol__rosidl_typesupport_fastrtps_c
+
+# fast build rule for target.
+robot_patrol__rosidl_typesupport_fastrtps_c/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_fastrtps_c/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_typesupport_c
+
+# Build rule for target.
+robot_patrol__rosidl_typesupport_c: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_c
+.PHONY : robot_patrol__rosidl_typesupport_c
+
+# fast build rule for target.
+robot_patrol__rosidl_typesupport_c/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_c/fast
 
 #=============================================================================
 # Target rules for targets named uninstall
@@ -244,6 +387,355 @@ uninstall: cmake_check_build_system
 uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_typesupport_introspection_c
+
+# Build rule for target.
+robot_patrol__rosidl_typesupport_introspection_c: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_introspection_c
+.PHONY : robot_patrol__rosidl_typesupport_introspection_c
+
+# fast build rule for target.
+robot_patrol__rosidl_typesupport_introspection_c/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_introspection_c/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__rosidl_typesupport_introspection_cpp
+
+# Build rule for target.
+robot_patrol__rosidl_typesupport_introspection_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__rosidl_typesupport_introspection_cpp
+.PHONY : robot_patrol__rosidl_typesupport_introspection_cpp
+
+# fast build rule for target.
+robot_patrol__rosidl_typesupport_introspection_cpp/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/build
+.PHONY : robot_patrol__rosidl_typesupport_introspection_cpp/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__python
+
+# Build rule for target.
+robot_patrol__python: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__python
+.PHONY : robot_patrol__python
+
+# fast build rule for target.
+robot_patrol__python/fast:
+	$(MAKE) -f CMakeFiles/robot_patrol__python.dir/build.make CMakeFiles/robot_patrol__python.dir/build
+.PHONY : robot_patrol__python/fast
+
+#=============================================================================
+# Target rules for targets named robot_patrol__py
+
+# Build rule for target.
+robot_patrol__py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_patrol__py
+.PHONY : robot_patrol__py
+
+# fast build rule for target.
+robot_patrol__py/fast:
+	$(MAKE) -f robot_patrol__py/CMakeFiles/robot_patrol__py.dir/build.make robot_patrol__py/CMakeFiles/robot_patrol__py.dir/build
+.PHONY : robot_patrol__py/fast
+
+rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.o: rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.o
+
+.PHONY : rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.o
+
+# target to build an object file
+rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_generator_c.dir/build.make CMakeFiles/robot_patrol__rosidl_generator_c.dir/rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.o
+.PHONY : rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.o
+
+rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.i: rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.i
+
+.PHONY : rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.i
+
+# target to preprocess a source file
+rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_generator_c.dir/build.make CMakeFiles/robot_patrol__rosidl_generator_c.dir/rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.i
+.PHONY : rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.i
+
+rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.s: rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.s
+
+.PHONY : rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.s
+
+# target to generate assembly for a file
+rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_generator_c.dir/build.make CMakeFiles/robot_patrol__rosidl_generator_c.dir/rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.s
+.PHONY : rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.c.s
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.o: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.o
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.o
+
+# target to build an object file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.o
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.o
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.i: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.i
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.i
+
+# target to preprocess a source file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.i
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.i
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.s: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.s
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.s
+
+# target to generate assembly for a file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.s
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.c.s
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.o: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.o
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.o
+
+# target to build an object file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.o
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.o
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.i: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.i
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.i
+
+# target to preprocess a source file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.i
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.i
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.s: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.s
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.s
+
+# target to generate assembly for a file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.s
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.c.s
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.o: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.o
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.o
+
+# target to build an object file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.o
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.o
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.i: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.i
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.i
+
+# target to preprocess a source file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.i
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.i
+
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.s: rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.s
+
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.s
+
+# target to generate assembly for a file
+rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.s
+.PHONY : rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.c.s
+
+rosidl_generator_py/robot_patrol/action/_go_to_point_s.o: rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.o
+
+.PHONY : rosidl_generator_py/robot_patrol/action/_go_to_point_s.o
+
+# target to build an object file
+rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__python.dir/build.make CMakeFiles/robot_patrol__python.dir/rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.o
+.PHONY : rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.o
+
+rosidl_generator_py/robot_patrol/action/_go_to_point_s.i: rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.i
+
+.PHONY : rosidl_generator_py/robot_patrol/action/_go_to_point_s.i
+
+# target to preprocess a source file
+rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__python.dir/build.make CMakeFiles/robot_patrol__python.dir/rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.i
+.PHONY : rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.i
+
+rosidl_generator_py/robot_patrol/action/_go_to_point_s.s: rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.s
+
+.PHONY : rosidl_generator_py/robot_patrol/action/_go_to_point_s.s
+
+# target to generate assembly for a file
+rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__python.dir/build.make CMakeFiles/robot_patrol__python.dir/rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.s
+.PHONY : rosidl_generator_py/robot_patrol/action/_go_to_point_s.c.s
+
+rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.o: rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.o
+
+.PHONY : rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.o
+
+# target to build an object file
+rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.o
+.PHONY : rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.o
+
+rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.i: rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.i
+
+.PHONY : rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.i
+.PHONY : rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.i
+
+rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.s: rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.s
+
+.PHONY : rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.s
+.PHONY : rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.cpp.s
+
+rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.o: rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.o
+
+.PHONY : rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.o
+
+# target to build an object file
+rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.o
+.PHONY : rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.o
+
+rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.i: rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.i
+
+.PHONY : rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.i
+.PHONY : rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.i
+
+rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.s: rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.s
+
+.PHONY : rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.s
+.PHONY : rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.cpp.s
+
+rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.o: rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.o
+
+.PHONY : rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.o
+
+rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.i: rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.i
+
+.PHONY : rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.i
+
+rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.s: rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.s
+
+.PHONY : rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.cpp.s
+
+rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.o: rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.o
+
+.PHONY : rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.o
+
+# target to build an object file
+rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.o
+.PHONY : rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.o
+
+rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.i: rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.i
+
+.PHONY : rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.i
+.PHONY : rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.i
+
+rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.s: rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.s
+
+.PHONY : rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.s
+.PHONY : rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.cpp.s
+
+rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.o: rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.o
+
+.PHONY : rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.o
+.PHONY : rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.o
+
+rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.i: rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.i
+
+.PHONY : rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.i
+.PHONY : rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.i
+
+rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.s: rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.s
+
+.PHONY : rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.s
+.PHONY : rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.c.s
+
+rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.o: rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.o
+
+.PHONY : rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.o
+
+# target to build an object file
+rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.o:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.o
+.PHONY : rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.o
+
+rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.i: rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.i
+
+.PHONY : rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.i
+
+# target to preprocess a source file
+rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.i:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.i
+.PHONY : rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.i
+
+rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.s: rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.s
+
+.PHONY : rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.s
+
+# target to generate assembly for a file
+rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.s:
+	$(MAKE) -f CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/robot_patrol__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.s
+.PHONY : rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.cpp.s
 
 src/direction_service.o: src/direction_service.cpp.o
 
@@ -298,6 +790,60 @@ src/direction_service_node.s: src/direction_service_node.cpp.s
 src/direction_service_node.cpp.s:
 	$(MAKE) -f CMakeFiles/direction_service_node.dir/build.make CMakeFiles/direction_service_node.dir/src/direction_service_node.cpp.s
 .PHONY : src/direction_service_node.cpp.s
+
+src/go_to_point_action.o: src/go_to_point_action.cpp.o
+
+.PHONY : src/go_to_point_action.o
+
+# target to build an object file
+src/go_to_point_action.cpp.o:
+	$(MAKE) -f CMakeFiles/go_to_point_action_node.dir/build.make CMakeFiles/go_to_point_action_node.dir/src/go_to_point_action.cpp.o
+.PHONY : src/go_to_point_action.cpp.o
+
+src/go_to_point_action.i: src/go_to_point_action.cpp.i
+
+.PHONY : src/go_to_point_action.i
+
+# target to preprocess a source file
+src/go_to_point_action.cpp.i:
+	$(MAKE) -f CMakeFiles/go_to_point_action_node.dir/build.make CMakeFiles/go_to_point_action_node.dir/src/go_to_point_action.cpp.i
+.PHONY : src/go_to_point_action.cpp.i
+
+src/go_to_point_action.s: src/go_to_point_action.cpp.s
+
+.PHONY : src/go_to_point_action.s
+
+# target to generate assembly for a file
+src/go_to_point_action.cpp.s:
+	$(MAKE) -f CMakeFiles/go_to_point_action_node.dir/build.make CMakeFiles/go_to_point_action_node.dir/src/go_to_point_action.cpp.s
+.PHONY : src/go_to_point_action.cpp.s
+
+src/go_to_point_action_node.o: src/go_to_point_action_node.cpp.o
+
+.PHONY : src/go_to_point_action_node.o
+
+# target to build an object file
+src/go_to_point_action_node.cpp.o:
+	$(MAKE) -f CMakeFiles/go_to_point_action_node.dir/build.make CMakeFiles/go_to_point_action_node.dir/src/go_to_point_action_node.cpp.o
+.PHONY : src/go_to_point_action_node.cpp.o
+
+src/go_to_point_action_node.i: src/go_to_point_action_node.cpp.i
+
+.PHONY : src/go_to_point_action_node.i
+
+# target to preprocess a source file
+src/go_to_point_action_node.cpp.i:
+	$(MAKE) -f CMakeFiles/go_to_point_action_node.dir/build.make CMakeFiles/go_to_point_action_node.dir/src/go_to_point_action_node.cpp.i
+.PHONY : src/go_to_point_action_node.cpp.i
+
+src/go_to_point_action_node.s: src/go_to_point_action_node.cpp.s
+
+.PHONY : src/go_to_point_action_node.s
+
+# target to generate assembly for a file
+src/go_to_point_action_node.cpp.s:
+	$(MAKE) -f CMakeFiles/go_to_point_action_node.dir/build.make CMakeFiles/go_to_point_action_node.dir/src/go_to_point_action_node.cpp.s
+.PHONY : src/go_to_point_action_node.cpp.s
 
 src/patrol.o: src/patrol.cpp.o
 
@@ -440,25 +986,79 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... install"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... go_to_point_action_node"
+	@echo "... patrol_with_service_node"
+	@echo "... test_node"
 	@echo "... direction_service_node"
 	@echo "... patrol_node"
-	@echo "... test_node"
+	@echo "... install/strip"
+	@echo "... robot_patrol__rosidl_typesupport_introspection_c__pyext"
+	@echo "... robot_patrol__rosidl_typesupport_fastrtps_c__pyext"
 	@echo "... robot_patrol_uninstall"
-	@echo "... patrol_with_service_node"
+	@echo "... robot_patrol__rosidl_typesupport_c__pyext"
+	@echo "... robot_patrol"
+	@echo "... install"
+	@echo "... robot_patrol__rosidl_typesupport_fastrtps_cpp"
+	@echo "... robot_patrol__rosidl_generator_c"
+	@echo "... robot_patrol__cpp"
+	@echo "... robot_patrol__rosidl_typesupport_cpp"
+	@echo "... robot_patrol__rosidl_typesupport_fastrtps_c"
+	@echo "... robot_patrol__rosidl_typesupport_c"
+	@echo "... test"
 	@echo "... uninstall"
+	@echo "... robot_patrol__rosidl_typesupport_introspection_c"
+	@echo "... robot_patrol__rosidl_typesupport_introspection_cpp"
+	@echo "... list_install_components"
+	@echo "... robot_patrol__python"
+	@echo "... robot_patrol__py"
+	@echo "... rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.o"
+	@echo "... rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.i"
+	@echo "... rosidl_generator_c/robot_patrol/action/detail/go_to_point__functions.s"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.o"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.i"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_c.s"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.o"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.i"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_fastrtps_c.s"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.o"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.i"
+	@echo "... rosidl_generator_py/robot_patrol/_robot_patrol_s.ep.rosidl_typesupport_introspection_c.s"
+	@echo "... rosidl_generator_py/robot_patrol/action/_go_to_point_s.o"
+	@echo "... rosidl_generator_py/robot_patrol/action/_go_to_point_s.i"
+	@echo "... rosidl_generator_py/robot_patrol/action/_go_to_point_s.s"
+	@echo "... rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.o"
+	@echo "... rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.i"
+	@echo "... rosidl_typesupport_c/robot_patrol/action/go_to_point__type_support.s"
+	@echo "... rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.o"
+	@echo "... rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.i"
+	@echo "... rosidl_typesupport_cpp/robot_patrol/action/go_to_point__type_support.s"
+	@echo "... rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.o"
+	@echo "... rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.i"
+	@echo "... rosidl_typesupport_fastrtps_c/robot_patrol/action/detail/go_to_point__type_support_c.s"
+	@echo "... rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.o"
+	@echo "... rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.i"
+	@echo "... rosidl_typesupport_fastrtps_cpp/robot_patrol/action/detail/dds_fastrtps/go_to_point__type_support.s"
+	@echo "... rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.o"
+	@echo "... rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.i"
+	@echo "... rosidl_typesupport_introspection_c/robot_patrol/action/detail/go_to_point__type_support.s"
+	@echo "... rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.o"
+	@echo "... rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.i"
+	@echo "... rosidl_typesupport_introspection_cpp/robot_patrol/action/detail/go_to_point__type_support.s"
 	@echo "... src/direction_service.o"
 	@echo "... src/direction_service.i"
 	@echo "... src/direction_service.s"
 	@echo "... src/direction_service_node.o"
 	@echo "... src/direction_service_node.i"
 	@echo "... src/direction_service_node.s"
+	@echo "... src/go_to_point_action.o"
+	@echo "... src/go_to_point_action.i"
+	@echo "... src/go_to_point_action.s"
+	@echo "... src/go_to_point_action_node.o"
+	@echo "... src/go_to_point_action_node.i"
+	@echo "... src/go_to_point_action_node.s"
 	@echo "... src/patrol.o"
 	@echo "... src/patrol.i"
 	@echo "... src/patrol.s"
