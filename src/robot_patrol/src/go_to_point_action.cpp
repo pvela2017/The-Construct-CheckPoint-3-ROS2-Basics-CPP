@@ -55,10 +55,20 @@ rclcpp_action::GoalResponse GoToPoint::handle_goal(const rclcpp_action::GoalUUID
 void GoToPoint::executeCB(const std::shared_ptr<GoalHandleGoToPoint> goal_handle) 
 {
     const auto goal = goal_handle->get_goal();
-    double Kp = 1.0;
+    auto feedback = std::make_shared<GoToPointAction::Feedback>();
+    auto result = std::make_shared<GoToPointAction::Result>();
+
+    double Kp = 2.0;
 
     rclcpp::Rate rate(10);
-    while (rclcpp::ok()) {
+    while (rclcpp::ok()) 
+    {
+        // Publish feedback
+        feedback->current_pos.x = current_pos_.x;
+        feedback->current_pos.y = current_pos_.y;
+        feedback->current_pos.z = current_pos_.z;
+        goal_handle->publish_feedback(feedback);
+
          // Get the current position
         double current_x = current_pos_.x;
         double current_y = current_pos_.y;
@@ -66,14 +76,14 @@ void GoToPoint::executeCB(const std::shared_ptr<GoalHandleGoToPoint> goal_handle
         // Get the desired position
         double desired_x = goal->goal_pos.x;
         double desired_y = goal->goal_pos.y;
-        double desired_yaw = goal->goal_pos.z;
+        
 
         // Compute the difference between the two positions
         double diff_x = desired_x - current_x;
         double diff_y = desired_y - current_y;
 
         // Calculate the angle (yaw) to the desired position
-        //double desired_yaw = std::atan2(diff_y, diff_x);
+        double desired_yaw = std::atan2(diff_y, diff_x);
 
         // Calculate the difference between the current and desired yaw
         double diff_yaw = desired_yaw - current_pos_.z;
@@ -97,17 +107,52 @@ void GoToPoint::executeCB(const std::shared_ptr<GoalHandleGoToPoint> goal_handle
         cmd_vel.angular.z = angular_speed;
         cmd_vel_pub_->publish(cmd_vel);
 
-        // Check if the goal is reached
+        // Check if the (x,y) goal is reached
         double distance_to_goal = std::sqrt(diff_x * diff_x + diff_y * diff_y);
         if (distance_to_goal < 0.01) 
         {
-            //action_server_->status(goal_handle->get_goal_id());
             cmd_vel.linear.x = 0;  // Fixed linear.x
             cmd_vel.angular.z = 0;
             cmd_vel_pub_->publish(cmd_vel);
+
+            // Check if the yaw goal is reached
+            double desired_yaw2 = goal->goal_pos.z*0.01745329;
+            bool yaw_ok = false;
+            while (!yaw_ok)
+            {
+                // Calculate the difference between the current and desired yaw
+                double diff_yaw2 = desired_yaw2- current_pos_.z;
+
+                // Normalize the angle difference to the range [-pi, pi]
+                while (diff_yaw2 > M_PI) 
+                {
+                    diff_yaw2 -= 2 * M_PI;
+                }
+                while (diff_yaw2 < -M_PI) 
+                {
+                    diff_yaw2 += 2 * M_PI;
+                }
+
+                // Calculate the angular speed (angular.z) required
+                double angular_speed2 = diff_yaw2 * 0.0005;  // Kp is a proportionality constant
+                cmd_vel.angular.z = angular_speed2;
+                cmd_vel_pub_->publish(cmd_vel);
+
+                if(diff_yaw2 <= 5*0.01745329) // 1 degree error
+                {
+                    cmd_vel.linear.x = 0;  // Fixed linear.x
+                    cmd_vel.angular.z = 0;
+                    cmd_vel_pub_->publish(cmd_vel);
+                    yaw_ok = true;
+                }
+            }
+            cmd_vel.linear.x = 0;  // Fixed linear.x
+            cmd_vel.angular.z = 0;
+            cmd_vel_pub_->publish(cmd_vel);
+            result->status = true;
+            goal_handle->succeed(result);
             break;
         }
-        //rclcpp::spin_some(this);
         rate.sleep();
     }
 }
