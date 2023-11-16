@@ -18,7 +18,7 @@ void DirectionService::directionCallBack(const std::shared_ptr<GetDirection::Req
   double sixty = M_PI / 6;
   double max_angle = M_PI / 2;
   double clear_distance = 0.5;
-  double max_distance = 1.3;
+  double max_distance = 1.3; // 1.3 sim , 1.8 real
 
   double minus_pi_2_index  = int((min_angle - request->laser_data.angle_min) / request->laser_data.angle_increment);
   double minus_sixty_index = int((minus_sixty - request->laser_data.angle_min) / request->laser_data.angle_increment);
