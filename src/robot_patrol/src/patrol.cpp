@@ -20,7 +20,7 @@ void Patrol::laserscanCallBack(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 {
   double min_angle = -M_PI / 2;
   double max_angle = M_PI / 2;
-  double clear_distance = 0.3;
+  double clear_distance = 0.3; // 0.3 sim , 0.7 real
 
 
   double minus_pi_2_index = int((min_angle - msg->angle_min) / msg->angle_increment);
