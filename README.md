@@ -2,27 +2,6 @@
 
 <a name="readme-top"></a>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#software-prerequisites">Software Prerequisites</a></li>
-        <li><a href="#hardware-prerequisites">Hardware Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#real-robot">Real Robot</a></li>
-  </ol>
-</details>
-
-
 ## About The Project
 This project demonstrates the application of ROS2 (Robot Operating System 2) concepts to control a real Turtlebot3 robot. Using the LIDAR and services the robot patrol the scenario without crashing into the obstacles.
 
