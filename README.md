@@ -91,7 +91,7 @@ This project demonstrates the application of ROS2 (Robot Operating System 2) con
 
 
 <!-- KEYS -->
-## Key topics learnt
+## Key Topics Learnt
 * Use services
 * Use actions.
 * Check if the custom action has been created.
