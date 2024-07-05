@@ -94,7 +94,4 @@ This project demonstrates the application of ROS2 (Robot Operating System 2) con
 ## Key Topics Learnt
 * Use services
 * Use actions.
-* Check if the custom action has been created.
-```sh
-ros2 interface show robot_patrol/action/GoToPoint
-```
+* Custom actions
